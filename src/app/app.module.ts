@@ -9,12 +9,18 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 
+// libraries, don't need import to app-routing
+import { StoreModule } from 'store';
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, AboutComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     ClarityModule,
+
+    StoreModule,
+
     AppRoutingModule
   ],
   providers: [],
