@@ -9,6 +9,15 @@ ng new angular-library-microservice --style=scss --routing
 ng generate library store --prefix str
 ng generate library inventory --prefix inv
 ng generate library generator --prefix gen
+
+# generate components for store lib
+ng generate component Home --project store --inline-style true
+ng generate component BookList --project store --inline-style true
+ng generate component CdList --project store --inline-style true
+ng generate component DvdList --project store --inline-style true
+
+# build store lib to use it
+ng build store
 ```
 
 ## Development server
