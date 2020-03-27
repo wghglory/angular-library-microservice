@@ -5,11 +5,13 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "lib:watch": "ng build store --watch",
     "lib:build": "ng build store && ng build generator && ng build inventory",
     "lib:install": "npm i dist/generator dist/store dist/inventory --save-optional",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "analyze": "ng build --prod --stats-json && webpack-bundle-analyzer ./dist/angular-library-microservice/stats-es2015.json"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +28,7 @@
     "@clr/icons": "3.0.1",
     "@clr/ui": "3.0.1",
     "@webcomponents/webcomponentsjs": "^2.0.0",
+    "moment": "^2.24.0",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
@@ -36,9 +39,9 @@
     "@angular/cli": "~9.1.0",
     "@angular/compiler-cli": "~9.1.0",
     "@angular/language-service": "~9.1.0",
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -51,7 +54,8 @@
     "protractor": "~5.4.3",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "~3.8.3",
+    "webpack-bundle-analyzer": "^3.6.1"
   },
   "optionalDependencies": {
     "@lib/generator": "file:dist/generator",

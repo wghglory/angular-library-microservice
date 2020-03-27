@@ -7,7 +7,8 @@ import { AboutComponent } from './about/about.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: '**', redirectTo: 'home' }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
