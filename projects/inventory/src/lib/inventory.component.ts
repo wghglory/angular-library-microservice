@@ -4,17 +4,13 @@ import { Component, OnInit } from '@angular/core';
   selector: 'inv-inventory',
   template: `
     <p>
-      inventory works!
+      inventory library works!
     </p>
   `,
-  styles: [
-  ],
+  styles: []
 })
 export class InventoryComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

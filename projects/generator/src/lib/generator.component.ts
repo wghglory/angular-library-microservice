@@ -3,18 +3,14 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'gen-generator',
   template: `
-    <p>
-      generator works!
+    <p style="border:1px solid red;">
+      generator library works!
     </p>
   `,
-  styles: [
-  ],
+  styles: []
 })
 export class GeneratorComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }
