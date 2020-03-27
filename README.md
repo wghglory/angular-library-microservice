@@ -31,15 +31,28 @@ e.g. `"name": "@lib/generator"`
 
 **Install packages:**
 
-After building and renaming, it's time to install libraries: `npm i dist/generator dist/store dist/inventory`.
+After building and renaming, it's time to install libraries: `npm i dist/generator dist/store dist/inventory --save-optional`.
 You will notice that below packages show up in package.json:
 
 key is library package.json name, value is dist folder.
 
 ```diff
-+ "@lib/generator": "file:dist/generator",
-+ "@lib/inventory": "file:dist/inventory",
-+ "@lib/store": "file:dist/store",
++  "optionalDependencies": {
++    "@lib/generator": "file:dist/generator",
++    "@lib/inventory": "file:dist/inventory",
++    "@lib/store": "file:dist/store"
++  }
+```
+
+```bash
+# 1. for any fresh installation, we just need to run the following commands:
+npm install --no-optional
+
+# 2. then build library
+ng build store
+
+# 3. this will install optional dependency which was skipped in 1.
+npm install
 ```
 
 **Import lib package in apps:**
